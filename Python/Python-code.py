@@ -127,5 +127,4 @@ aggs = {
 }
 for name, data in aggs.items():
     data.to_csv("C:\project\DataSet.csv", index=False)
-
-print("\n[DONE] All aggregates exported.")
+    
