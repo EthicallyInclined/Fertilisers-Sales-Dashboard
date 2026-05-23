@@ -1,4 +1,4 @@
-# 🌾 IFFCO Fertilisers Sales Dashboard
+# 🌾 Fertilisers Sales Dashboard
 ## Overview
 The Fertilisers Sales Dashboard is a business intelligence and data analytics project developed to analyze fertiliser sales performance using interactive visualizations and KPIs.
 This dashboard provides insights into sales trends, product demand, regional performance, and overall revenue generation. The objective is to transform raw sales data into meaningful business decisions through visual storytelling.
