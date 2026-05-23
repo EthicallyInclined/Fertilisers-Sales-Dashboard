@@ -1,12 +1,3 @@
--- ============================================================
--- AGRIFLOW FERTILIZERS - DATA ENGINEERING & ANALYTICS PIPELINE
--- SQL Scripts | Version 1.0 | May 2026
--- ============================================================
-
--- ===========================================
--- SECTION 1: DATABASE & SCHEMA SETUP
--- ===========================================
-
 CREATE DATABASE IF NOT EXISTS agriflow_db;
 USE agriflow_db;
 
@@ -95,9 +86,6 @@ CREATE TABLE IF NOT EXISTS fact_sales (
     FOREIGN KEY (channel_id) REFERENCES dim_channel(channel_id)
 );
 
--- ===========================================
--- SECTION 2: DATA QUALITY CHECKS
--- ===========================================
 
 -- Check 1: Null values in critical columns
 SELECT 
@@ -118,9 +106,6 @@ SELECT COUNT(*) AS revenue_mismatches
 FROM stg_fertilizer_sales
 WHERE ABS(Revenue - (Quantity_MT * Unit_Price)) > 1;
 
--- ===========================================
--- SECTION 3: DIMENSION POPULATION (ETL)
--- ===========================================
 
 INSERT IGNORE INTO dim_product (product_name, category, base_price, base_cost) VALUES
 ('Urea',             'Nitrogenous', 600.00, 280.00),
@@ -150,9 +135,6 @@ SELECT DISTINCT State, District,
     END
 FROM stg_fertilizer_sales;
 
--- ===========================================
--- SECTION 4: ANALYTICAL QUERIES
--- ===========================================
 
 -- A) Annual Revenue & YoY Growth
 WITH annual AS (
@@ -249,9 +231,6 @@ FROM first_buy f
 JOIN stg_fertilizer_sales s ON s.District=f.District
 GROUP BY f.cohort_month ORDER BY f.cohort_month;
 
--- ===========================================
--- SECTION 5: MATERIALIZED VIEWS / SUMMARY TABLES
--- ===========================================
 
 CREATE OR REPLACE VIEW vw_monthly_summary AS
 SELECT Year, Month, Quarter, Season,
