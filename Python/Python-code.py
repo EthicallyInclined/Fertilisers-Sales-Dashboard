@@ -1,9 +1,3 @@
-"""
-AgriFlow Fertilizers — Python Analytics & Data Engineering Pipeline
-====================================================================
-Covers: Ingestion → Cleaning → EDA → Statistical Analysis → Visualizations
-"""
-
 import pandas as pd
 import numpy as np
 import warnings
