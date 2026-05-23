@@ -26,7 +26,8 @@ This project aims to solve the following challenges:
 - Matplotlib
 - Warnings
 ## Dashboard Preview
-
+![Alt Text](Images/Dashboard-Preview.png)
+![Alt Text](Images/Product-scorecard.png)
 
 ## Key Insights
 ### Sales Performance
@@ -65,10 +66,11 @@ IFFCO-FERTILISERS-SALES-DASHBOARD
 │
 ├── data/
 │   └── raw_data.csv
-│   └── analysed_data.csv
+│   └── analysed_data.xlsx
 │
 ├── images/
-│   └── dashboard-preview.png
+│   └── Dashboard-preview.png
+│   └── Product-scorecard.png
 │
 ├── python/
 │   └── python_code.py
@@ -76,10 +78,12 @@ IFFCO-FERTILISERS-SALES-DASHBOARD
 ├── sql/
 │   └── queries.sql
 │
-├── docs/
-│   └── project-report.md
+├── DashBoard/
+│   └── Fertilisers-sales.pbix
 │
+├── Project-Overview.md
 ├── README.md
+├── .gitignore
 ```
 
 ## How to Use
@@ -88,8 +92,10 @@ IFFCO-FERTILISERS-SALES-DASHBOARD
 ```bash
 git clone https://github.com/ethicallyinclined/Fertilisers-Sales-Dashboard.git
 ```
-### Step 2: Explore Insights
-Open Power BI
+### Step 2: Download .pbix file
+Open in Power BI
+
+### Step 3: Expore
 - Apply filters
 - Analyze KPIs
 - Navigate dashboard pages
